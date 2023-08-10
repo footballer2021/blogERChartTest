@@ -1,0 +1,51 @@
+@startuml my-blog
+hide circle
+skinparam linetype ortho
+title マイブログ用ER
+
+entity "users" {
+  id<<PK>>
+  --
+  username
+  email
+  password
+}
+
+entity "posts" {
+  id<<PK>>
+  --
+  title
+  content
+  user_id<<FK>>
+  created_at
+  updated_at
+  image
+}
+
+entity "comments" {
+  id<<PK>>
+  --
+  name
+  created_at
+  post_id<<FK>>
+}
+
+entity "tags" {
+  id<<PK>>
+  --
+  name
+}
+
+entity "posts_tags" {
+  id<<PK>>
+  --
+  post_id<<FK>>
+  tag_id<<FK>>
+}
+
+users ||--o{ posts
+posts ||--o{ posts_tags
+posts ||--o{ comments
+tags ||--o{ posts_tags
+
+@enduml
