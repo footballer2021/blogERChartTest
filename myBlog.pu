@@ -46,6 +46,6 @@ entity "posts_tags" {
 users ||--o{ posts
 posts ||--o{ posts_tags
 posts ||--o{ comments
-tags ||--o{ posts_tags
+tags ||--|{ posts_tags
 
 @enduml
