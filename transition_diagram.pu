@@ -1,6 +1,7 @@
 @startuml 状態遷移図
+title 状態遷移図
 
-state 共通ヘッダー {
+state 共通ヘッダー ##[dotted]{
     ホーム : Home
     ホーム --> 記事一覧
     記事一覧 : 無限スクロール
@@ -10,8 +11,5 @@ state 共通ヘッダー {
 
     Signin --> 確認画面
 }
-
-
-
 
 @enduml
