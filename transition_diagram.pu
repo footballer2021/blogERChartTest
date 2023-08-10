@@ -1,0 +1,17 @@
+@startuml 状態遷移図
+
+state 共通ヘッダー {
+    ホーム : Home
+    ホーム --> 記事一覧
+    記事一覧 : 無限スクロール
+    ホーム --> About 
+    ホーム --> Login  
+    ホーム --> Signin 
+
+    Signin --> 確認画面
+}
+
+
+
+
+@enduml
